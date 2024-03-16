@@ -1,0 +1,25 @@
+{% extends 'reagents/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+        .header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 15px;
+              background-color: #e9e9e9;
+    }
+    </style>
+    <header>
+        <p align="right"><a href="/main" target="new">Главная страница</a></right></p>
+    </header>
+    <table border = "1" bordercolor="grey" cellspacing="0" cellpadding="10">
+        <tr><th align="center" bgcolor="#66CDAA"><h2>{{ list }}</h2></th></tr>
+        <tr><td align="center" bgcolor="#F0FFFF"><a href="/show_petr_ether">Петролейный эфир</a></td></tr>
+        <tr><td align="center" bgcolor="#F0FFFF"><a href="/show_silica">Силикагель</a></td></tr>
+        <tr><td align="center" bgcolor="#F0FFFF"><a href="/show_chloro">Хлороформ</a></td></tr>
+        <tr><td align="center" bgcolor="#F0FFFF"><a href="/show_naoh">Натрия гидроокись</a></td></tr>
+    </table>
+{% endblock %}

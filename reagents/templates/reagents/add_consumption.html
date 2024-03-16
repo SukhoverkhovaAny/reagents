@@ -1,0 +1,14 @@
+{% extends 'reagents/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h3>Расход</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <form action="/add_consumption_form">
+            <button>Добавить</button>
+        </form>
+    </form>
+{% endblock %}

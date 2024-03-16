@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Сайт{% endblock %}</title>
+    <style type="text/css">
+        .footer {
+            position: absolute;
+            bottom: 0;
+            background-color: #A9A9A9;
+            color: white;
+            text-align: center;
+            height: 40px;
+            width: 1310px;
+            font-size: 12px;
+
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+        <p>Скоро тут появится текст...</p>
+    {% endblock %}
+<footer class="footer">
+    <p align="center">Все права защищены©</p>
+</footer>
+</body>
+</html>

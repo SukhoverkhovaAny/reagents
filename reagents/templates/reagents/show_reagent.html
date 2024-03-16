@@ -1,0 +1,68 @@
+{% extends 'reagents/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<style type="text/css">
+        .header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 15px;
+              background-color: #e9e9e9;
+    }
+</style>
+<header>
+    <a href="/content">Содержание</a>
+</header>
+
+
+<table border = "1" bordercolor="grey" cellspacing="0" cellpadding="10">
+    <tr>
+        <td align="center" bgcolor="#66CDAA">Название</td>
+        <td align="center" width="400" bgcolor="#F0FFFF">{{ name_reagent }} </td>
+    </tr>
+    <tr>
+        <td align="center" bgcolor="#66CDAA">Нормативный документ</td>
+        <td align="center" width="400" bgcolor="#F0FFFF">{{ normative_doc }} </td>
+    </tr>
+</table>
+
+<table width="100%" border = "1" bordercolor="grey" cellspacing="0" cellpadding="10">
+    <thead>
+        <tr>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">№</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Дата поступления</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Количество</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Квалификация</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Партия</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Дата изготовления</td>
+            <td rowspan="2" align="center" bgcolor="#66CDAA">Срок годности</td>
+            <td colspan="3" align="center" bgcolor="#66CDAA">Расход</td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#66CDAA">Дата</td>
+            <td align="center" bgcolor="#66CDAA">Количество</td>
+            <td align="center" bgcolor="#66CDAA">Остаток</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if reagents %}
+        {% for reagent in reagents %}
+        <tr>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.id }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.receipt_date }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.instance }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.qualification }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.shipment }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.date_of_manufacture }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.best_before_date }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.date_of_consumption }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.quantity_of_consumption }}</td>
+            <td align="center" bgcolor="#F0FFFF">{{ reagent.remainder }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

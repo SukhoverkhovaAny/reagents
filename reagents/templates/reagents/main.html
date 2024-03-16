@@ -1,0 +1,22 @@
+{% extends 'reagents/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{% load static %}
+    <style type="text/css">
+        .body {
+
+        }
+    </style>
+    <body align="center">
+        <h1>{{ name }}</h1>
+        <h3>Дата начала ведения журнала:</h3><p>{{ start_date }}</p>
+        <h3>Дата окончания ведения журнала:</h3><p>{{ end_date }}</p>
+        <h3>Ответственный за ведение журнала:</h3><p>{{ responsible }}</p>
+        <a href="/user_autho_form">Авторизация пользователя</a><br>
+        <a href="/content">Просмотр журнала в качестве гостя</a><br>
+        <img src="{% static 'images/1.jpg' %}" height="230px" width="175px" align="middle" vspace="5px">
+        <p style="font-size: 12px;">Разработано Freepik www.freepik.com</p>
+    </body>
+{% endblock %}
